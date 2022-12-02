@@ -1,0 +1,24 @@
+﻿@model Folder
+
+@{
+    ViewData["Title"] = "Создать Папку";
+}
+<div class="overlay">
+    <form method="post" class="send_form">
+        <div class="object">
+            <div class="label">
+                <label asp-for="Name" class="label_name">
+                    <input asp-for="Name" type="text" class="input_name" placeholder="Введите название папки" required>
+                    <span class="visually-hidden">Поле для ввода названия папки</span>
+                </label>
+            </div>
+            <div class="button">
+                <button type="submit" class="btn btn-send">
+                    Создать
+                    <span class="visually-hidden">Создать папку</span>
+                </button>
+            </div>
+        </div>
+        <a asp-controller="Document" asp-action="Index" class="btn btn-close">X</a>
+    </form>
+</div>

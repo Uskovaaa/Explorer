@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Folder>
+
+@{
+    ViewData["Title"] = "Переименовать";
+}
+<div class="overlay">
+    <form asp-action="Rename" class="send_form">
+        @foreach (var obj in Model)
+        {
+            <div class="object">
+                <div class="label">
+                    <label class="label_name">@obj.Name</label>
+                    <span class="visually-hidden">Название папки</span>
+                </div>
+                <div class="button">
+                    <a asp-controller="Document" asp-action="RenameAction" asp-route-id="@obj.ID" type="submit" class="btn btn-send">
+                        Переименовать
+                        <span class="visually-hidden">Переименовать</span>
+                    </a>
+                </div>
+            </div>
+        }
+        <a asp-controller="Document" asp-action="Index" class="btn btn-close">X</a>
+    </form>
+</div>

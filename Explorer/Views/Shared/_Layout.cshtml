@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] Explorer</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Explorer.styles.css" asp-append-version="true" />
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="menu main-menu">
+            <ul class="menu-list">
+                <li class="menu-list-item">
+                    <a asp-controller="Document" asp-action="CreateFolder" class="open">Создать Папку</a>
+                </li>
+
+                <li class="menu-list-item">
+                    <a asp-controller="Document" asp-action="DeleteFolder" class="open">Удалить Папку</a>
+                </li>
+
+                <li class="menu-list-item">
+                    <a asp-controller="Document" asp-action="AddDocument" class="open">Загрузить файл</a>
+                </li>
+
+                <li class="menu-list-item">
+                    <a asp-controller="Document" asp-action="DownloadDocument" class="open">Скачать файл</a>
+                </li>
+
+                <li class="menu-list-item">
+                    <a asp-controller="Document" asp-action="DeleteDocument" class="open">Удалить файл</a>
+                </li>
+
+                <li class="menu-list-item">
+                    <a asp-controller="Document" asp-action="Rename" class="open">Переименовать</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <script src="~/js/main.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

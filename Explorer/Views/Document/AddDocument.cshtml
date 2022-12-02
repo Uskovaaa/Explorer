@@ -1,0 +1,25 @@
+﻿@model Document
+
+@{
+    ViewData["Title"] = "Загрузить Файл";
+}
+<div class="overlay">
+    <form method="post" class="send_form">
+        <div class="object">
+            <div class="label">
+                <label class="label_name">
+                    <input type="file" class="input_name" required>
+                    <input type="text" autocomplete="off" placeholder="Enter File Description" name="description" />
+                    <span class="visually-hidden">Кнопка для загрузки файла</span>
+                </label>
+            </div>
+            <div class="button">
+                <button type="submit" class="btn btn-send">
+                    Загрузить
+                    <span class="visually-hidden">Загрузить файл</span>
+                </button>
+            </div>
+        </div>
+        <a asp-controller="Document" asp-action="Index" class="btn btn-close">X</a>
+    </form>
+</div>
